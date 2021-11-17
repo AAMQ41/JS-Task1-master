@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Selecting an Element!</title>
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <ul class="container">
+        <li class="box" id="box-1"></li>
+        <li class="box box-to-select" id="box-2"></li>
+        <li class="box box-to-select" id="box-3"></li>
+        <li class="box box-to-select" id="box-4"></li>
+        <li class="box" id="box-5"></li>
+        <li class="box box-to-select-2" id="box-6"></li>
+        <li class="box box-to-select-2" id="box-7"></li>
+        <li class="box box-to-select-2" id="box-8"></li>
+      </ul>
+    </div>
+
+    <script>
+            //Get element by id
+            const boxColor=document.getElementById("box-5");
+            boxColor.addEventListener("click",function(e){
+              e.target.style.backgroundColor="skyblue";
+
+            });
+
+            //Get element by className
+            const coloredBox=document.getElementsByClassName("box-to-select-2");
+            //Iterate boxes through a For of loop to add functionallity
+            for(const i of coloredBox){
+
+              i.addEventListener("click",function(event){
+                event.target.style.backgroundColor="pink";
+
+              });
+            }
+            //Get Element with qeurySelector
+            const qSelector=document.querySelector("#box-1");
+            qSelector.addEventListener("click",function(event){
+              event.target.style.backgroundColor="gray";
+
+            })
+
+            //Get element by querySelectorAll
+            const qSelectorAll=document.querySelectorAll(".box-to-select");
+            for(const i of qSelectorAll){
+              i.addEventListener("click",function(event){
+                event.target.style.backgroundColor="lightsalmon";
+              });
+            }
+
+            //Iterate boxes through a For of loop to add functionallity
+    </script>
+  </body>
+</html>
